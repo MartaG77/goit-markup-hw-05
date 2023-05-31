@@ -264,7 +264,7 @@ h1 {
 .occupation {
   display: flex;
   gap: 30px;
-  padding: 0;
+  padding: 0px;
   margin: 0 auto;
   justify-content: space-between;
 }
@@ -406,7 +406,10 @@ h1 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  transition-property: visibility, opacity, pointer-events;
+  transition-property: background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .is-hidden {
   pointer-events: none;
@@ -415,18 +418,102 @@ h1 {
   transform: rotate(45deg);
 }
 .close-button {
-  fill: #757575;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid rgba (0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.close-icon {
+  position: relative;
+  right: 2px;
+  top: 2px;
+  height: 17px;
+  width: 17px;
 }
 .modal {
   position: absolute;
   width: 528px;
   height: 581px;
-  left: 536px;
   top: 221px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  padding-left: 8px;
+  padding-top: 8px;
+}
+.label-background {
+  position: absolute;
+  height: 70px;
+  width: 100%;
+  background: rgba(47, 48, 58, 0.8);
+  bottom: 4px;
+}
+.label {
+  position: relative;
+}
+.label-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 27px;
+  letter-spacing: 0.03em;
+}
+.underline {
+  position: relative;
+  top: 28px;
+  border-radius: 2px;
+  background: #2196f3;
+}
+.underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 53px;
+  height: 4px;
+  background-color: #2196f3;
+}
+.img-cover {
+  transition-property: bacground-color;
+}
+.animation {
+  position: relative;
+  overflow: hidden;
+}
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 150, 243, 0.9);
+  padding: 49px 45px 49px 24px;
+  transition-property: color backgroud shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+}
+.cover-text {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  width: 301px;
+  height: 196px;
+}
+.project-border:hover .cover {
+  transform: translateY(0);
 }
