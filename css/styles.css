@@ -267,6 +267,7 @@ h1 {
   padding: 0px;
   margin: 0 auto;
   justify-content: space-between;
+  height: 100%;
 }
 .project-buttons {
   display: flex;
@@ -410,12 +411,15 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition-property: background-color, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-hidden {
   pointer-events: none;
   visibility: hidden;
-  opacity: 0.5;
-  transform: rotate(45deg);
+  background-color: rgb(37, 39, 39);
+  transform: rotate(180deg);
 }
 .close-button {
   position: absolute;
@@ -424,14 +428,13 @@ h1 {
   width: 30px;
   height: 30px;
   background-color: #ffffff;
-  border: 1px solid rgba (0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
 }
 .close-icon {
   position: relative;
-  right: 2px;
-  top: 2px;
+  top: 3px;
   height: 17px;
   width: 17px;
 }
@@ -455,7 +458,7 @@ h1 {
   height: 70px;
   width: 100%;
   background: rgba(47, 48, 58, 0.8);
-  bottom: 4px;
+  bottom: 0;
 }
 .label {
   position: relative;
@@ -501,7 +504,7 @@ h1 {
   height: 100%;
   background: rgba(33, 150, 243, 0.9);
   padding: 49px 45px 49px 24px;
-  transition-property: color backgroud shadow;
+  transition-property: color shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(100%);
@@ -514,6 +517,10 @@ h1 {
   width: 301px;
   height: 196px;
 }
-.project-border:hover .cover {
+.project-border:hover .cover,
+.project-border:focus .cover {
   transform: translateY(0);
+}
+.img {
+  height: 100%;
 }
